@@ -34,27 +34,37 @@
         </div>
     </section>
     
+    <h1 class="heading">my projects</h1>
     <section class="projects">
-            <h1 class="heading">my projects</h1>
+           
         <div class="container-project">
-            <div class="box-project">
                 <?php
                     $select_project = $conn->prepare("SELECT * FROM `projects`");
                     $select_project->execute();
                     if($select_project->rowCount() > 0){
                         while($fetch_project = $select_project->fetch(PDO::FETCH_ASSOC)){
+
+                            $project_id = $fetch_project['id'];
+
+                            $count_review = $conn->prepare("SELECT * FROM `reviews` WHERE post_id = ?");
+                            $count_review->execute([$project_id]);
+                            $total_review = $count_review->rowCount();
                             ?>
 
-                            <p><?php $fetch_project["title"]?></p>
+                             <div class="box-project">
+                                <img src="uploaded_files/<?= $fetch_project['image']; ?>" alt="">
+                                <h3><?= $fetch_project['title']; ?></h3>
+                                <p class="total_review"> <i class="fa-solid fa-star"></i> <span><?= $total_review; ?></span></p>
+                                <a href="components/view_post.php?get_id=<?= $project_id; ?>" class="get_btn">view project</a>
+                             </div>
 
 
                           <?php
                         }
                     }else{
-                        echo '<p>no project added yet</p>';
+                        echo '<p class="empty">no project added yet</p>';
                     }
                 ?>
-            </div>
         </div>
     </section>
 
