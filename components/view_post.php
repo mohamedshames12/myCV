@@ -148,8 +148,8 @@ if (isset($_GET['get_id'])) {
                                 <?php }else{?> 
                                     <h3><?= substr($fetch_user['name'], 0 , 1); ?></h3>
                                 <?php };?>
-                                <div>
-                                    <p> <?= $fetch_user['name'];?> </p>
+                                <div class="flex-data">
+                                    <h5> <?= $fetch_user['name'];?> </h5>
                                     <span> <?= $fetch_review['date']?> </span>
                                 </div>
                             </div>
@@ -171,10 +171,13 @@ if (isset($_GET['get_id'])) {
                             <p style="background-color:orange;"><i class="fa-solid fa-star"></i><span><?= $fetch_review['rating']; ?></span></p>
                         <?php };?>
                     </div>
+                    <div class="desc">
                     <h3 class="title"><?= $fetch_review['title']?></h3>
                     <?php if($fetch_review['description'] != ''){?>
                         <p class="description"><?= $fetch_review['description']?></p>
                         <?php };?>
+                        </div>
+                      
                         <?php if($fetch_review['user_id'] == $user_id){?>
                             <form action="" method="post" class="flex-end">
                                 <input type="hidden" name="delete_id" value="<?= $fetch_review['id']?>">
@@ -182,7 +185,7 @@ if (isset($_GET['get_id'])) {
                                 <input type="submit" value="delete review" name="delete_review" class="delete-btn">
                             </form>
                         <?php };?>
-                </div>
+                        </div>
             <?php 
                 }
             } else {
