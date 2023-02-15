@@ -421,6 +421,10 @@ form .link_add:hover{
     background-color: #fb8500;
 }
 
+.user img {
+    height: 10rem;
+}
+
 @media (max-width:760px) {
     .container-about{
         display: block;

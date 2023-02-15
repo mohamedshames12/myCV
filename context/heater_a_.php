@@ -33,8 +33,8 @@
                         <?php if($fetch_profile['image'] != ''){ ?>
                             <img src="../uploaded_files/<?= $fetch_profile['image']?>" alt="" class="image_h">
                             <?php }; ?>
-                        <a href="update.php" class="update">update profile</a>
-                        <a href="logout.php" class="logout" onclick="return confirm('logout form this website?');">logout</a>
+                        <a href="../auth/update.php" class="update">update profile</a>
+                        <a href="../auth/logout.php" class="logout" onclick="return confirm('logout form this website?');">logout</a>
                     </div>
                 <?php } else { ?>
                     <div class="flex-btn">
