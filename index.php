@@ -68,6 +68,25 @@
         </div>
     </section>
 
+    <section class="socail">
+        <div class="container-socail">
+            <div class="box-socail">
+                <a href="https://www.facebook.com/"><img src="images/facebook.png" alt=""></a>
+            </div>
+            <div class="box-socail">
+                <a href="https://github.com/mohamedshames12"><img src="images/github.png" alt=""></a>
+            </div>
+            <div class="box-socail">
+                 <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox"> <img src="images/gmail.png" alt=""></a>
+            </div>
+            <div class="box-socail">
+                <a href="#"><img src="images/instagram.png" alt=""></a>
+            </div>
+            <div class="box-socail">
+                <a href="https://web.whatsapp.com/"><img src="images/whatsapp.png" alt=""></a>
+            </div>
+        </div>
+    </section>
 
 
 
